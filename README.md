@@ -1,6 +1,8 @@
 # cordova-ourcodeworld-materialcamera
 A cordova wrapper for the [Android Library Material Camera](https://github.com/afollestad/material-camera).
 
+<img src="https://raw.githubusercontent.com/afollestad/material-camera/master/art/showcase1.png" width="800px" />
+
 # Installation
 
 Add the plugin using the following commands in a terminal:
@@ -11,9 +13,14 @@ cordova plugin add https://github.com/ourcodeworld/cordova-ourcodeworld-material
 
 After the installation you will be able to use the `OurCodeWorld.MaterialCamera` object in the Window.
 
+
+# Documentation
+
+[Visit the official documentation of the plugin here](http://docs.ourcodeworld.com/projects/cordova-our-code-world-material-camera)
+
 # Examples
 
-The videoRecorder and camera object contains a lot of options, please read the docs.
+The videoRecorder and camera object contains a lot of options, [please read the docs](http://docs.ourcodeworld.com/projects/cordova-our-code-world-material-camera).
 
 ## Take picture
 
@@ -22,6 +29,8 @@ OurCodeWorld.MaterialCamera.camera
     .qualityProfile("QUALITY_1080P")
     .setLanguage("de")
     .defaultToFrontFacing(true)
+    // Or save the output path:
+    //.saveDir("/storage/emulated/0/")
     .allowRetry(true)
     .startCamera({
         success: function(Data){
@@ -62,10 +71,6 @@ OurCodeWorld.MaterialCamera.videoRecorder
         }
     });
 ```
-
-# Documentation
-
-[Visit the official documentation of the plugin here](http://docs.ourcodeworld.com/projects/cordova-our-code-world-material-camera)
 
 ---
 
