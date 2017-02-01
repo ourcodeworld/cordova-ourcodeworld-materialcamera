@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0" 
+        id="com.ourcodeworld.plugins.MaterialCamera"
+        version="1.0.0">
+
+  <name>Our Code World Material Camera</name>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0" />
+  </engines>
+  <asset src="www/MaterialCamera.js" target="js/MaterialCamera.js" />
+  <js-module src="www/MaterialCamera.js" name="MaterialCamera">
+    <clobbers target="window.OurCodeWorld.MaterialCamera" />
+  </js-module>
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="MaterialCameraCordova">
+        <param name="android-package" value="com.ourcodeworld.plugins.materialcamera.MaterialCameraCordova" />
+      </feature>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <activity android:name="com.ourcodeworld.plugins.materialcamera.MaterialCameraActivity"
+                android:label="Our Code World Material Camera">
+            <intent-filter>
+              <action android:name="com.ourcodeworld.plugins.materialcamera.MaterialCameraActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+      </activity>
+
+      <activity android:name="com.afollestad.materialcamera.CaptureActivity"
+                android:theme="@style/MaterialCamera.CaptureActivity" />
+      <activity android:name="com.afollestad.materialcamera.CaptureActivity2"
+                android:theme="@style/MaterialCamera.CaptureActivity" />
+		</config-file>
+
+
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+      <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE"/>
+      <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE"/>
+      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+      <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+      <uses-permission android:name="android.permission.CAMERA" />
+      <uses-permission android:name="android.permission.FLASHLIGHT" />
+      <uses-permission android:name="android.permission.RECORD_AUDIO" /> 
+
+      <uses-feature android:name="android.hardware.camera" />
+      <uses-feature android:name="android.hardware.camera.autofocus" />
+    </config-file>
+
+    <source-file src="src/android/MaterialCameraCordova.java" target-dir="src/com/example/plugin/" />
+    <source-file src="src/android/MaterialCameraActivity.java" target-dir="src/com/example/plugin/" />
+
+    <resource-file src="src/android/strings_materialcamera.xml" target="res/values/strings_materialcamera.xml" />
+    <framework src="src/android/plugin.gradle" custom="true" type="gradleReference"/>
+  </platform>
+</plugin>

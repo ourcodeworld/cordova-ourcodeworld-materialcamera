@@ -1,0 +1,8 @@
+repositories {
+    jcenter()
+    maven { url "https://dl.bintray.com/drummer-aidan/maven" }
+}
+
+dependencies {
+    compile 'com.afollestad:material-camera:0.4.4'
+}
