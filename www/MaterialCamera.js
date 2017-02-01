@@ -35,7 +35,7 @@ module.exports = (function(){
         setLanguage: function(value){
             return this._setConfigurationProperty("language", value);
         },
-        startCamera: function(){
+        startCamera: function(callbacks){
             var config = this._configuration;
             
             cordova.exec(function(response){
