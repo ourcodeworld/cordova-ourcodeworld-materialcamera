@@ -5,7 +5,7 @@ A cordova wrapper for the [Android Library Material Camera](https://github.com/a
 
 # Installation
 
-Add the plugin using the following commands in a terminal:
+Add the plugin using the following command in a terminal:
 
 ```bash
 cordova plugin add https://github.com/ourcodeworld/cordova-ourcodeworld-materialcamera.git
