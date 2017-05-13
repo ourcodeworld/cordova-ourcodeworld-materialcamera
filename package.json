@@ -1,0 +1,24 @@
+{
+  "name": "cordova-ourcodeworld-materialcamera",
+  "version": "1.0.0",
+  "description": "A cordova wrapper for the Android Library Material Camera.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ourcodeworld/cordova-ourcodeworld-materialcamera.git"
+  },
+  "keywords": [
+    "camera",
+    "material",
+    "android"
+  ],
+  "author": "Our Code World",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ourcodeworld/cordova-ourcodeworld-materialcamera/issues"
+  },
+  "homepage": "https://github.com/ourcodeworld/cordova-ourcodeworld-materialcamera#readme"
+}
