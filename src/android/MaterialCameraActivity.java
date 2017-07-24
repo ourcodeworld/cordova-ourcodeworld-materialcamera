@@ -1,21 +1,15 @@
 package com.ourcodeworld.plugins.materialcamera;
 
-import org.apache.cordova.*;
 import android.app.Activity;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 import android.content.Intent;
-
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-
-import java.lang.Exception;
 
 import com.afollestad.materialcamera.MaterialCamera;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.math.BigDecimal;
-import android.app.Application;
-import android.content.res.Resources;
 
 public class MaterialCameraActivity extends Activity {
 
@@ -55,7 +49,7 @@ public class MaterialCameraActivity extends Activity {
         try{
             if(configuration.has("language")){
                 String lg_code = configuration.getString("language");
-                
+
                 int lbl_retry = getIdentifierResource("label_retry_" + lg_code);
                 int lbl_confirm = getIdentifierResource("label_confirm_" + lg_code);
 
@@ -84,7 +78,7 @@ public class MaterialCameraActivity extends Activity {
                 String _saveDir = configuration.getString("saveDir");
                 cm.saveDir(_saveDir);
             }
-            
+
             if(configuration.has("retryExits")){
                 boolean _retryExits = configuration.getBoolean("retryExits");
                 cm.retryExits(_retryExits);
@@ -94,10 +88,10 @@ public class MaterialCameraActivity extends Activity {
                 long _maxAllowedFileSize = configuration.getLong("maxAllowedFileSize");
                 cm.maxAllowedFileSize(_maxAllowedFileSize);
             }
-            
+
             if(configuration.has("qualityProfile")){
                 String temp_qualityProfile = configuration.getString("qualityProfile");
-                
+
                 if(temp_qualityProfile.equals("QUALITY_HIGH")){
                     cm.qualityProfile(MaterialCamera.QUALITY_HIGH);
 
@@ -106,7 +100,7 @@ public class MaterialCameraActivity extends Activity {
 
                 }else if(temp_qualityProfile.equals("QUALITY_480P")){
                     cm.qualityProfile(MaterialCamera.QUALITY_480P);
-                
+
                 }else if(temp_qualityProfile.equals("QUALITY_720P")){
                     cm.qualityProfile(MaterialCamera.QUALITY_720P);
 
@@ -119,7 +113,7 @@ public class MaterialCameraActivity extends Activity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        
+
         // Start camera
         cm.stillShot()
           .start(CAMERA_RQ);
@@ -129,10 +123,12 @@ public class MaterialCameraActivity extends Activity {
         MaterialCamera cm = new MaterialCamera(this);
 
         try{
-            
+
+
+
             if(configuration.has("language")){
                 String lg_code = configuration.getString("language");
-                
+
                 int lbl_retry = getIdentifierResource("label_retry_" + lg_code);
                 int lbl_confirm = getIdentifierResource("label_confirm_" + lg_code);
 
@@ -152,6 +148,11 @@ public class MaterialCameraActivity extends Activity {
                 cm.allowRetry(_allowRetry);
             }
 
+            if(configuration.has("countdownMillis")){
+                long _countdownMillis = configuration.getLong("countdownMillis");
+                cm.countdownMillis(_countdownMillis);
+            }
+
             if(configuration.has("autoSubmit")){
                 boolean _autoSubmit = configuration.getBoolean("autoSubmit");
                 cm.allowRetry(_autoSubmit);
@@ -161,20 +162,20 @@ public class MaterialCameraActivity extends Activity {
                 String _saveDir = configuration.getString("saveDir");
                 cm.saveDir(_saveDir);
             }
-            
+
             if(configuration.has("retryExits")){
                 boolean _retryExits = configuration.getBoolean("retryExits");
                 cm.retryExits(_retryExits);
             }
- 
+
             if(configuration.has("maxAllowedFileSize")){
                 long _maxAllowedFileSize = configuration.getLong("maxAllowedFileSize");
                 cm.maxAllowedFileSize(_maxAllowedFileSize);
             }
-            
+
             if(configuration.has("qualityProfile")){
                 String temp_qualityProfile = configuration.getString("qualityProfile");
-                
+
                 if(temp_qualityProfile.equals("QUALITY_HIGH")){
                     cm.qualityProfile(MaterialCamera.QUALITY_HIGH);
 
@@ -183,7 +184,7 @@ public class MaterialCameraActivity extends Activity {
 
                 }else if(temp_qualityProfile.equals("QUALITY_480P")){
                     cm.qualityProfile(MaterialCamera.QUALITY_480P);
-                
+
                 }else if(temp_qualityProfile.equals("QUALITY_720P")){
                     cm.qualityProfile(MaterialCamera.QUALITY_720P);
 
@@ -201,17 +202,17 @@ public class MaterialCameraActivity extends Activity {
                 boolean _restartTimerOnRetry = configuration.getBoolean("restartTimerOnRetry");
                 cm.restartTimerOnRetry(_restartTimerOnRetry);
             }
-            
+
             if(configuration.has("autoRecordWithDelaySec")){
                 int _autoRecordWithDelaySec = configuration.getInt("autoRecordWithDelaySec");
                 cm.autoRecordWithDelaySec(_autoRecordWithDelaySec);
             }
-            
+
             if(configuration.has("autoRecordWithDelayMs")){
                 long _autoRecordWithDelayMs = configuration.getLong("autoRecordWithDelayMs");
                 cm.autoRecordWithDelayMs(_autoRecordWithDelayMs);
             }
-            
+
             if(configuration.has("audioDisabled")){
                 boolean _audioDisabled = configuration.getBoolean("audioDisabled");
                 cm.audioDisabled(_audioDisabled);
@@ -231,7 +232,7 @@ public class MaterialCameraActivity extends Activity {
                 int _audioEncodingBitRate = configuration.getInt("audioEncodingBitRate");
                 cm.audioEncodingBitRate(_audioEncodingBitRate);
             }
-            
+
             if(configuration.has("videoFrameRate")){
                 int _videoFrameRate = configuration.getInt("videoFrameRate");
                 cm.videoFrameRate(_videoFrameRate);
@@ -241,17 +242,17 @@ public class MaterialCameraActivity extends Activity {
                 int _videoPreferredHeight = configuration.getInt("videoPreferredHeight");
                 cm.videoPreferredHeight(_videoPreferredHeight);
             }
-            
+
             if(configuration.has("videoPreferredAspect")){
                 float _videoPreferredAspect = BigDecimal.valueOf(configuration.getDouble("videoPreferredAspect")).floatValue();
                 cm.videoPreferredAspect(_videoPreferredAspect);
             }
-            
+
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        
+
         // Start video recorder
         cm.start(CAMERA_RQ);
     }
@@ -278,14 +279,14 @@ public class MaterialCameraActivity extends Activity {
                 } else if(data != null) {
                     Exception e = (Exception) data.getSerializableExtra(MaterialCamera.ERROR_EXTRA);
                     e.printStackTrace();
-                    
+
                     response.put("message", e.getMessage());
                     response.put("status", "error");
-                    
+
                 } else {
                     response.put("status", "none");
-                    
-                } 
+
+                }
             }
 
             // Send information

@@ -48,8 +48,8 @@
       <uses-feature android:name="android.hardware.camera.autofocus" />
     </config-file>
 
-    <source-file src="src/android/MaterialCameraCordova.java" target-dir="src/com/example/plugin/" />
-    <source-file src="src/android/MaterialCameraActivity.java" target-dir="src/com/example/plugin/" />
+    <source-file src="src/android/MaterialCameraCordova.java" target-dir="src/com/ourcodeworld/plugins/materialcamera"/>
+    <source-file src="src/android/MaterialCameraActivity.java" target-dir="src/com/ourcodeworld/plugins/materialcamera"/>
 
     <resource-file src="src/android/strings_materialcamera.xml" target="res/values/strings_materialcamera.xml" />
     <framework src="src/android/plugin.gradle" custom="true" type="gradleReference"/>

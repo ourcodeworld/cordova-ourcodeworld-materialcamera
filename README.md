@@ -56,6 +56,7 @@ OurCodeWorld.MaterialCamera.videoRecorder
     .defaultToFrontFacing(true)
     .allowRetry(true)
     .autoRecordWithDelayMs(5000)
+    .countdownMillis(20000)
     .startVideoRecorder({
         success: function(Data){
             console.info(Data);
