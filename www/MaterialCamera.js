@@ -77,6 +77,9 @@ module.exports = (function(){
         allowRetry: function(value){
             return this._setConfigurationProperty("allowRetry", value);
         },
+        countdownMillis: function(value){
+            return this._setConfigurationProperty("countdownMillis", value);
+        },
         autoSubmit: function(){
             return this._setConfigurationProperty("autoSubmit", value);
         },

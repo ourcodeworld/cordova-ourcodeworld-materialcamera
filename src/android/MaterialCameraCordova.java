@@ -1,12 +1,15 @@
 package com.ourcodeworld.plugins.materialcamera;
 
-import org.apache.cordova.*;
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+
+import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
-import android.util.Log; 
-import android.content.Intent;
-import android.content.ActivityNotFoundException;
-import android.os.Bundle;
 
 public class MaterialCameraCordova extends CordovaPlugin {
     private CallbackContext PUBLIC_CALLBACKS = null;
