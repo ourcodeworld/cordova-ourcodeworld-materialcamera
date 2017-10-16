@@ -1,8 +1,10 @@
 repositories {
-    jcenter()
-    maven { url "https://dl.bintray.com/drummer-aidan/maven" }
+    jcenter()
+    maven { url "https://jitpack.io" }
+    maven { url 'https://dl.bintray.com/drummer-aidan/maven' }
+    maven { url 'https://dl.bintray.com/maheshpachbole/CordovaPlugin' }
 }
 
 dependencies {
-    compile 'com.afollestad:material-camera:0.4.4'
-}
+    compile 'com.afollestad:material-camera:0.4.5'
+}  

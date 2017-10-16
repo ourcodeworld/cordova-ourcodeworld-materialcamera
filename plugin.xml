@@ -8,7 +8,7 @@
   <engines>
     <engine name="cordova" version=">=3.4.0" />
   </engines>
-  <asset src="www/MaterialCamera.js" target="js/MaterialCamera.js" />
+
   <js-module src="www/MaterialCamera.js" name="MaterialCamera">
     <clobbers target="window.OurCodeWorld.MaterialCamera" />
   </js-module>
